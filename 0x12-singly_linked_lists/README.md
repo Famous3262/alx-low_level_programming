@@ -1,11 +1,10 @@
 C - SINGLY LINKED LIST
-
-A singly linked list is a type of linked list that is unidirectional, that is, it can be traversed in only one direction from head to the last node (tail). Each element in a linked list is called a node. A single node contains data and a pointer to the next node which helps in maintaining the structure of the list.
+A singly linked list in C is a linear data structure in which the elements are not stored in contiguous memory locations and each element is connected only to its next element using a pointer. 
+It include a series of connected nodes. Each node stores the data and the address of the next node.
 
 TASKS:
 
 0. Print list
-mandatory
 Write a function that prints all the elements of a list_t list.
 
 Prototype: size_t print_list(const list_t *h);
@@ -20,7 +19,6 @@ Write a function that returns the number of elements in a linked list_t list.
 Prototype: size_t list_len(const list_t *h);
 
 2. Add node
-mandatory
 Write a function that adds a new node at the beginning of a list_t list.
 
 Prototype: list_t *add_node(list_t **head, const char *str);
@@ -29,7 +27,6 @@ str needs to be duplicated
 You are allowed to use strdup
 
 3. Add node at the end
-mandatory
 Write a function that adds a new node at the end of a list_t list.
 
 Prototype: list_t *add_node_end(list_t **head, const char *str);
@@ -38,7 +35,6 @@ str needs to be duplicated
 You are allowed to use strdup
 
 4. Free list
-mandatory
 Write a function that frees a list_t list.
 
 Prototype: void free_list(list_t *head);
@@ -49,7 +45,6 @@ Write a function that prints You're beat! and yet, you must allow,\nI bore my ho
 You are allowed to use the printf function
 
 6. Real programmers can write assembly code in any language
-#advanced
 Write a 64-bit program in assembly that prints Hello, Holberton, followed by a new line.
 
 You are only allowed to use the printf function
