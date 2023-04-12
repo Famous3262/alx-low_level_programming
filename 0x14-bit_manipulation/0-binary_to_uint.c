@@ -1,36 +1,24 @@
 #include "main.h"
 
 /**
- * binary_to_uint - converts a binary number to an unsigned int.
- * @b: binary number
+ * binary_to_uint - converts a binary number to unsigned int
+ * @b: string containing the binary number
  *
- * Return: the converted number
+ * Return: the unsigned int
  */
 unsigned int binary_to_uint(const char *b)
 {
+	int m;
 	unsigned int peg = 0;
-	int len, base_two;
 
 	if (!b)
 		return (0);
 
-	/*reducing the length of the string input*/
-	if (strlen(b) > 32)
-		return (0);
-
-	for (len = 0; b[len] != '\0'; len++)
-
-	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+	for (m = 0; b[m]; m++)
 	{
-		if (b[len] != '0' && b[len] != '1')
-		{
+		if (b[m] < '0' || b[m] > '1')
 			return (0);
-		}
-
-		if (b[len] & 1)
-		{
-			peg += base_two;
-		}
+		peg = 2 * peg + (b[m] - '0');
 	}
 
 	return (peg);
