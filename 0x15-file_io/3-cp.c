@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *create_buffer(char *file);
-void close_file(int fd);
-
 /**
  * create_buffer - Allocates 1024 bytes for a buffer.
  * @file: Filename buffer is storing chars to
@@ -82,7 +79,7 @@ int main(int argc, char *argv[])
 		}
 
 		kyte = write(to, buffer, s);
-		if (to == -1 || w == -1)
+		if (to == -1 || kyte == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
