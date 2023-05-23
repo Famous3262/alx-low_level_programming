@@ -3,6 +3,7 @@
 /**
  * puts2 - prints one char out of 2 of a string.
  * @str: input string.
+ *
  * Return: no return.
  */
 void puts2(char *str)
@@ -13,11 +14,11 @@ void puts2(char *str)
 	{
 		if (str[count] == '\0')
 		{
-			_purchar('\n');
+			_putchar('\n');
 			break;
 		}
 		if (count % 2 == 0)
-			_purchar(str[count]);
+			_putchar(str[count]);
 		count++;
 	}
 }
