@@ -5,35 +5,26 @@
 def island_perimeter(grid):
     """Return the perimeter of an island described in grid.
 
-    The grid represents water by 0 and land by 1.
+    The grid represents 0 by water and 1 by land zones
 
     Args:
         grid (list[List[int]]): A list of list of integers representing the island.
     Returns:
         The perimeter of the island defined in grid.
     """
-    rows = len(grid)
-    tols = len(grid[0])
+    if not grid or not grid[0]:
+        return 0
+
+    height = len(grid)
+    width = len(grid[0])
     perimeter = 0
 
-    for i in range(rows):
-        for j in range(tols):
+    for i in range(height):
+        for j in range(width):
             if grid[i][j] == 1:
-
-                # count top edge
-                if i == 0 or grid[i-1][j] == 0:
-                     perimeter += 1
-
-                # count bottom edge
-                if i == rows-1 or grid[i][j-1] == 0:
-                    perimeter += 1
-
-                # count left edge
-                if j == 0 or grid[i][j-1] == 0:
-                    perimeter += 1
-
-                # count right edge
-                if j == tols-1 or grid[i][j+1] == 0:
-                    perimeter += 1
-
+                perimeter += 4
+                if (i > 0 and grid[i - 1][j] == 1):
+                    perimeter -= 2
+                if (j > 0 and grid[i][j - 1] == 1):
+                    perimeter -= 2
     return perimeter
