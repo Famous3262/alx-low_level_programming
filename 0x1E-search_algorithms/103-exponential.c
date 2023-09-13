@@ -13,10 +13,10 @@
   */
 int _binary_search(int *array, size_t left, size_t right, int value)
 {
+	size_t j;
+
 	if (array == NULL)
 		return (-1);
-
-	size_t j;
 
 	while (right >= left)
 	{
@@ -49,11 +49,10 @@ int _binary_search(int *array, size_t left, size_t right, int value)
   */
 int exponential_search(int *array, size_t size, int value)
 {
+	size_t j = 0, right;
+
 	if (array == NULL)
 		return (-1);
-
-	size_t j = 0;
-	size_t right;
 
 	if (array[0] != value)
 	{

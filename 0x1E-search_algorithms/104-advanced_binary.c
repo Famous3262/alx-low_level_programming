@@ -11,11 +11,11 @@
  */
 int rec_search(int *array, size_t size, int value)
 {
-	if (array == NULL || size == 0)
-		return (-1);
-
 	size_t low = size / 2;
 	size_t j;
+
+	if (array == NULL || size == 0)
+		return (-1);
 
 	printf("Searching in array");
 

@@ -11,31 +11,50 @@
  */
 int recursive_search(int *array, size_t size, int value)
 {
-	int start, mid, end;
-	int i;
+	size_t mid = size / 2;
+	size_t i;
 
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
-	start = 0;
-	end = size - 1;
+	printf("Searching in array");
 
-	while (start <= end)
-	{
-		mid = i(start + end) / 2;
-		printf("Searching subarray: ");
+	for (i = 0; i < size; i++)
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 
-		for (i = start; i <= end; i++)
-			printf("%d ", array[i]);
+	printf("\n");
 
-		printf("\n");
+	if (mid && size % 2 == 0)
+		mid--;
 
-		if (array[mid] == value)
-			return (mid);
-		else if (array[mid] < value)
-			start = mid + 1;
-		else
-			end = mid - 1;
-	}
-	return (-1);
+	if (value == array[mid])
+		return ((int)mid);
+
+	if (value < array[mid])
+		return (recursive_search(array, mid, value));
+
+	mid++;
+
+	return (recursive_search(array + mid, size - mid, value) + mid);
+}
+
+/**
+ * binary_search - calls to binary_search to return
+ *			the index of the number
+ *
+ * @array: Pointer to the first element in the array
+ * @size: Number of elements in array
+ * @value: Value to search for
+ * Return: Index where value is located, otherwise -1 if array is NULL
+ */
+int binary_search(int *array, size_t size, int value)
+{
+	int index;
+
+	index = recursive_search(array, size, value);
+
+	if (index >= 0 && array[index] != value)
+		return (-1);
+
+	return (index);
 }
