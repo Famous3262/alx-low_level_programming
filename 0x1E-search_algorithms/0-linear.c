@@ -7,7 +7,7 @@
  * @array: Pointer to the first elements in array
  * @size: Number of elements in array
  * @value: Value to search for
- * Return: EXIT_SUCCESS
+ * Return: Always EXIT_SUCCESS
  */
 int linear_search(int *array, size_t size, int value)
 {
